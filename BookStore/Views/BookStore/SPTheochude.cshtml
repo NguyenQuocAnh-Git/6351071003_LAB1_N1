@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BookStore.Models.SACH>
+@{
+    ViewBag.Title = "SPTheochude";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h1>SACH THEO CHU DE</h1>
+
+<div class="row">
+    @foreach (var sach in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <a href="@Url.Action("Details", "BookStore", new {id = sach.Masach})">
+                <img alt="@sach.Tensach" src="~/Content/images/templatemo_image_01.jpg" />
+                @*<img src="~/Content/images/templatemo_image_01.jpg"/>*@
+
+                <div>
+                    <br />
+                    <h4 style="text-align: center">
+                        <span>@sach.Tensach</span>
+                    </h4>
+                </div>
+            </a>
+        </div>
+    }
+
+</div>

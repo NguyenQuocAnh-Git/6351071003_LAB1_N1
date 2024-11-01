@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BookStore.Models.NHAXUATBAN>
+@{
+    ViewBag.Title = "SPTheoNXB";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h1>SACH THEO NHA XUAT BAN</h1>
+<div class="row">
+    @foreach (var nhaxuatban in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <a href="@Url.Action("Details", "BookStore", new {id = nhaxuatban.MaNXB})">
+                <img alt="@nhaxuatban.TenNXB" src="~/Content/images/templatemo_image_01.jpg" />
+                @*<img src="~/Content/images/templatemo_image_01.jpg"/>*@
+
+                <div>
+                    <br />
+                    <h4 style="text-align: center">
+                        <span>@nhaxuatban.TenNXB</span>
+                    </h4>
+                </div>
+            </a>
+        </div>
+    }
+
+</div>
+
+

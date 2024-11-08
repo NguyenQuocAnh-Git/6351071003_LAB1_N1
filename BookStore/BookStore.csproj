@@ -97,6 +97,7 @@
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\templatemo_style.css" />
+    <Content Include="Content\images\carts.png" />
     <Content Include="Content\images\templatemo_ads.jpg" />
     <Content Include="Content\images\templatemo_bg.jpg" />
     <Content Include="Content\images\templatemo_btn_01.jpg" />
@@ -126,6 +127,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookStoreController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +156,7 @@
     <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Giohang.cs" />
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
@@ -184,6 +188,12 @@
     <Content Include="Views\BookStore\SPTheochude.cshtml" />
     <Content Include="Views\BookStore\SPTheoNXB.cshtml" />
     <Content Include="Views\BookStore\Details.cshtml" />
+    <Content Include="Views\Nguoidung\Dangky.cshtml" />
+    <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
+    <Content Include="Views\Giohang\GioHang.cshtml" />
+    <Content Include="Views\Giohang\GioHangPartial.cshtml" />
+    <Content Include="Views\Giohang\DatHang.cshtml" />
+    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

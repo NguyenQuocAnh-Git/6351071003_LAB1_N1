@@ -34,7 +34,7 @@
     </div>
     <div>
         <div id="Datmua">
-            <a href="@Url.Action("AddtoCard", "ShoppingCard", new {id = Model.Masach})">
+            <a href="@Url.Action("ThemGiohang", "Giohang", new {@iMasach = @Model.Masach, @strURL=Request.Url.ToString() })">
                 ĐẶT MUA
             </a>
         </div>

@@ -4,31 +4,28 @@
 }
 <h2 style="display: flex; justify-content: center; color: red;">SÁCH MỚI</h2>
 <div class="row">
-@foreach (var sach in Model)
-{
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="">
-            <a href="@Url.Action("Details", "BookStore", new {id = sach.Masach})">
-                <img style=" display: flex; justify-content: center; align-items: center; height: 100%;" alt="@sach.Tensach" src="~/Content/images/templatemo_image_01.jpg" />
-                @*<img src="~/Content/images/templatemo_image_01.jpg"/>*@
+    @foreach (var sach in Model)
+    {
+        <div id="templatemo_content_right">
+            <div>
+                <a class="templatemo_product_box" href="@Url.Action("Details", "BookStore", new {id = sach.Masach})">
+                    <img style=" display: flex; justify-content: center; align-items: center; height: 100%;" alt="@sach.Tensach" src="~/Content/images/templatemo_image_01.jpg" />
+                    @*<img src="~/Content/images/templatemo_image_01.jpg"/>*@
 
-                <div>
-                    <br />
-                    <h4 style="text-align: center">
-                        <span>@sach.Tensach</span>
-                    </h4>
-                    <p></p>
-                </div>
-                <div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-
-                </div>
-            </a>
+                    <div>
+                        <h4>
+                            <span>@sach.Tensach</span>
+                        </h4>
+                        <p></p>
+                    </div>
+                    <div>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-}
+    }

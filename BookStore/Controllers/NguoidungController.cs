@@ -101,7 +101,8 @@ namespace BookStore.Controllers
                 KHACHHANG kh = db.KHACHHANG.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
                 if (kh != null)
                 {
-                    ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
+                    Session["Taikhoan"] = kh;
+                    return RedirectToAction("Index", "BookStore");
                 }
                 else ViewBag.ThongBao = "Tên đăng nhập không đúng";
             }

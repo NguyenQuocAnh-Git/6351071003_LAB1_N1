@@ -21,10 +21,7 @@ namespace BookStore.Controllers
         {
             return View();
         }
-        public ActionResult Dangnhap()
-        {
-            return View();
-        }
+
 
         [HttpPost]
         public ActionResult Dangky(FormCollection collection, KHACHHANG kh)
@@ -84,6 +81,10 @@ namespace BookStore.Controllers
             return this.Dangky();
         }
         [HttpGet]
+        public ActionResult Dangnhap()
+        {
+            return View();
+        }
         public ActionResult Dangnhap(FormCollection collection)
         {
             var tendn = collection["TenDN"];
@@ -94,7 +95,7 @@ namespace BookStore.Controllers
             }
             else if (String.IsNullOrEmpty(matkhau))
             {
-                ViewData["Loi2"] = "Phải nhập tên mật khẩu";
+                ViewData["Loi2"] = "Phải nhập mật khâu";
             }
             else
             {
@@ -104,7 +105,10 @@ namespace BookStore.Controllers
                     Session["Taikhoan"] = kh;
                     return RedirectToAction("Index", "BookStore");
                 }
-                else ViewBag.ThongBao = "Tên đăng nhập không đúng";
+                else
+                {
+                    ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                }
             }
             return View();
         }

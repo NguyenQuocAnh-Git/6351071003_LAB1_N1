@@ -1,22 +1,24 @@
-﻿@{
+﻿@using BookStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SACH>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 <h2 style="display: flex; justify-content: center; color: red;">SÁCH MỚI</h2>
-<div class="row">
+<div class="row" id="templatemo_content_right">
     @foreach (var sach in Model)
     {
         <div id="templatemo_content_right">
             <div>
                 <a class="templatemo_product_box" href="@Url.Action("Details", "BookStore", new {id = sach.Masach})">
-                    <img style=" display: flex; justify-content: center; align-items: center; height: 100%;" alt="@sach.Tensach" src="~/Content/images/templatemo_image_01.jpg" />
-                    @*<img src="~/Content/images/templatemo_image_01.jpg"/>*@
-
+                    <img style=" display: flex; justify-content: center; align-items: center; height: 100%;"
+                         alt="@sach.Tensach"
+                         src="@Url.Content("~/Content/images/templatemo_image_01.jpg")" />
                     <div>
                         <h4>
                             <span>@sach.Tensach</span>
                         </h4>
-                        <p></p>
                     </div>
                     <div>
                         <span class="glyphicon glyphicon-star"></span>
@@ -29,3 +31,60 @@
             </div>
         </div>
     }
+    <div class="cleaner_with_height">&nbsp;</div>
+
+    @{
+        int currentPage = ViewBag.CurrentPage ?? 1;
+        int totalPages = ViewBag.TotalPages ?? 1;
+    }
+    <div style="text-align: center; margin-top: 10px; font-weight: bold;">
+        Trang @Model.PageNumber / @Model.PageCount
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        @if (currentPage > 1)
+        {
+            <a href="@Url.Action("Index", new { page = currentPage - 1 })" class="page-link">Previous</a>
+        }
+
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            if (i == currentPage)
+            {
+                <span class="page-link active">@i</span>
+            }
+            else
+            {
+                <a href="@Url.Action("Index", new { page = i })" class="page-link">@i</a>
+            }
+        }
+
+        <!-- Link to Next Page -->
+        @if (currentPage < totalPages)
+        {
+            <a href="@Url.Action("Index", new { page = currentPage + 1 })" class="page-link">Next</a>
+        }
+    </div>
+
+    <!-- CSS inline cho phân trang -->
+    <style>
+        .page-link {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 8px 12px;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+            .page-link:hover {
+                background-color: #f0f0f0;
+            }
+
+            .page-link.active {
+                background-color: #333;
+                color: white;
+                cursor: default;
+            }
+    </style>

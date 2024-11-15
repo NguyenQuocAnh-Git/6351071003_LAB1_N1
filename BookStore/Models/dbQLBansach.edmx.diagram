@@ -17,6 +17,7 @@
         <AssociationConnector Association="QLBANSACHModel.FK_Chude" ManuallyRouted="false" />
         <AssociationConnector Association="QLBANSACHModel.FK_Khachhang" ManuallyRouted="false" />
         <AssociationConnector Association="QLBANSACHModel.FK_NhaXB" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLBANSACHModel.Admin" Width="1.5" PointX="8" PointY="4.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

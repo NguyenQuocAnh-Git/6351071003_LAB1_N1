@@ -32,5 +32,6 @@ namespace BookStore.Models
         public DbSet<NHAXUATBAN> NHAXUATBAN { get; set; }
         public DbSet<SACH> SACH { get; set; }
         public DbSet<TACGIA> TACGIA { get; set; }
+        public DbSet<Admin> Admin { get; set; }
     }
 }
